@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>اللام الشمسية والقمرية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3fb;--card:#fff;--ink:#1b2440;--mute:#5d6783;--line:#d5ddef;--sun:#f2a900;--sunbg:#fff3cf;--sunink:#7a5200;--moon:#4b5bd6;--moonbg:#e4e7fb;--moonink:#2a3490;--ok:#1f9d6b;--okbg:#dcf5ea;--bad:#d6455d;--badbg:#fde4e8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111731;--card:#1a2247;--ink:#eef1ff;--mute:#a4aed3;--line:#2c3668;--sunbg:#3b3110;--sunink:#ffd666;--moonbg:#262e66;--moonink:#b9c1ff;--okbg:#12382b;--badbg:#401923;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111731;--card:#1a2247;--ink:#eef1ff;--mute:#a4aed3;--line:#2c3668;--sunbg:#3b3110;--sunink:#ffd666;--moonbg:#262e66;--moonink:#b9c1ff;--okbg:#12382b;--badbg:#401923;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Tajawal","Segoe UI",Tahoma,sans-serif;font-size:17px;line-height:1.6;padding-bottom:84px}
+main{max-width:640px;margin:0 auto;padding:12px 16px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0 10px}
+header.top h1{font-size:21px;margin:0;font-weight:800}
+.stars{background:var(--sunbg);color:var(--sunink);border-radius:99px;padding:2px 14px;font-weight:800;white-space:nowrap}
+h2{font-size:20px;margin:6px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px}
+.sun{background:var(--sunbg);color:var(--sunink);border-color:transparent}
+.moon{background:var(--moonbg);color:var(--moonink);border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{min-width:44px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:26px;font-weight:800;background:var(--card);color:var(--ink)}
+.ex{display:flex;gap:10px;flex-wrap:wrap}
+.ex div{flex:1 1 140px;background:var(--card);color:var(--ink);border-radius:12px;padding:8px 12px}
+.ex b{font-size:24px}.ex small{display:block;color:var(--mute)}
+button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:12px 16px;font-weight:700;background:var(--moon);color:#fff;min-height:48px}
+button.alt{background:var(--card);color:var(--ink);border:2px solid var(--line)}
+button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.menu{display:grid;gap:10px}
+.menu button{text-align:start;display:flex;justify-content:space-between;align-items:center;background:var(--card);color:var(--ink);border:2px solid var(--line);padding:14px 16px}
+.menu small{color:var(--mute);font-weight:400;display:block}
+.bigword{text-align:center;font-size:56px;font-weight:800;margin:6px 0 12px;line-height:1.3}
+.bigword span{color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.two button{font-size:20px;padding:18px 8px}
+.bsun{background:var(--sun);color:#3a2600}
+.bar{height:10px;background:var(--line);border-radius:9px;overflow:hidden;margin:6px 0 12px}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.fb{margin:12px 0;padding:10px 14px;border-radius:12px;font-weight:700}
+.fb.ok{background:var(--okbg);color:var(--ok)}.fb.no{background:var(--badbg);color:var(--bad)}
+.meta{display:flex;justify-content:space-between;color:var(--mute);font-weight:700}
+.row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row .w{flex:1;font-size:24px;font-weight:800}
+.row button{padding:6px 10px;min-height:44px;background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.row button.sel.s{background:var(--sun);color:#3a2600;border-color:var(--sun)}
+.row button.sel.m{background:var(--moon);color:#fff;border-color:var(--moon)}
+.row.ok{background:var(--okbg)}.row.no{background:var(--badbg)}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.badge{text-align:center;padding:14px 8px;border-radius:16px;background:var(--card);border:2px dashed var(--line);opacity:.55}
+.badge.on{opacity:1;border:2px solid var(--sun);background:var(--sunbg);color:var(--sunink)}
+.badge .e{font-size:40px;display:block}
+nav{position:fixed;inset:auto 0 0 0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:center;gap:4px;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;max-width:150px;background:none;color:var(--mute);padding:4px;display:flex;flex-direction:column;align-items:center;font-size:14px;min-height:52px;border-radius:12px}
+nav button span{font-size:22px;line-height:1.2}
+nav button.on{background:var(--moonbg);color:var(--moonink)}
+.pop{position:fixed;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;font-size:64px;animation:pop 1.2s ease-out forwards}
+@keyframes pop{0%{transform:scale(.3);opacity:0}30%{transform:scale(1.2);opacity:1}100%{transform:translateY(-80px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.pop{animation:none;opacity:0}}
+@media print{nav,header.top,.noprint{display:none!important}body{background:#fff;color:#000}.card{border:1px solid #000}.row button.sel{background:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header class="top"><h1>☀️ شمسية وقمرية 🌙</h1><div class="stars" id="stars">⭐ 0</div></header>
+<div id="view"></div>
+</main>
+<nav>
+<button data-t="learn"><span>📖</span>تعلّم</button>
+<button data-t="play"><span>🎮</span>ألعاب</button>
+<button data-t="sheet"><span>📝</span>ورقة عمل</button>
+<button data-t="reward"><span>🏆</span>مكافآتي</button>
+</nav>
+<script>
+const SUN="تثدذرزسشصضطظلن",MOON="ابجحخعغفقكمهوي";
+const WORDS_OLD="الشمس الدار الرجل النهر السماء الثوب الطالب الزهرة التفاح الليل الصابون الدرس الشجرة الذهب الرمان النجم الطائر الظل الضفدع الشرطي القمر الكتاب الباب الولد الجمل الحصان الخبز العين الغابة الفيل المدرسة الهاتف الأسد البيت الجبل الحديقة الكرسي المعلم الفراشة اليد الغيمة القلم العصفور الهلال".split(" ");
+const WORDS="شَمْس دَار رَجُل نَهْر سَمَاء ثَوْب طَالِب زَهْرَة تُفَّاح لَيْل صَابُون دَرْس شَجَرَة ذَهَب رُمَّان نَجْم طَائِر ظِلّ ضِفْدَع شُرْطِيّ قَمَر كِتَاب بَاب وَلَد جَمَل حِصَان خُبْز عَيْن غَابَة فِيل مَدْرَسَة هَاتِف أَسَد بَيْت جَبَل حَدِيقَة كُرْسِيّ مُعَلِّم فَرَاشَة يَد غَيْمَة قَلَم عُصْفُور هِلَال".split(" ").map(r=>"ال"+r);
+const BADGES=[[5,"🌟","نجم مبتدئ"],[15,"🔍","مستكشف الحروف"],[30,"🏅","بطل اللام"],[60,"👑","أسطورة اللغة"]];
+const norm=c=>"أإآ".includes(c)?"ا":c;
+const kind=w=>SUN.includes(norm(w[2]))?"s":"m";
+const rest=w=>w.slice(2);
+const full=w=>kind(w)==="s"?"ال"+rest(w)[0]+"\u0651"+rest(w).slice(1):"الْ"+rest(w);
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let S={stars:0,best:0};
+try{const r=localStorage.getItem("slm");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem("slm",JSON.stringify(S))}catch(e){}};
+const $=id=>document.getElementById(id);
+const view=$("view");
+function addStars(n){S.stars+=n;save();$("stars").textContent="⭐ "+S.stars;}
+function pop(e){const d=document.createElement("div");d.className="pop";d.textContent=e;document.body.appendChild(d);setTimeout(()=>d.remove(),1300)}
+function tab(t){document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));clearInterval(G.tm);({learn,play,sheet,reward})[t]();window.scrollTo(0,0)}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>tab(b.dataset.t));
+const chips=s=>[...s].map(c=>`<div class="chip">${c}</div>`).join("");
+
+function learn(){
+view.innerHTML=`
+<div class="card sun"><h2>☀️ اللام الشمسية</h2>
+<p>لا نلفظ اللام، ونضعّف الحرف بعدها (شدّة). يأتي بعدها أحد هذه الحروف الأربعة عشر:</p>
+<div class="chips">${chips(SUN)}</div>
+<div class="ex"><div><b>الشَّمْس</b><small>تُقرأ: اشْ‑شَمْس</small></div><div><b>النَّجْم</b><small>تُقرأ: انْ‑نَجْم</small></div></div></div>
+<div class="card moon"><h2>🌙 اللام القمرية</h2>
+<p>نلفظ اللام بوضوح، ويكون الحرف بعدها ساكنًا بلا شدّة. يأتي بعدها أحد هذه الحروف:</p>
+<div class="chips">${chips(MOON)}</div>
+<div class="ex"><div><b>الْقَمَر</b><small>تُقرأ: الْ‑قَمَر</small></div><div><b>الْكِتَاب</b><small>تُقرأ: الْ‑كِتَاب</small></div></div></div>
+<div class="card"><h2>💡 حيلة للتذكّر</h2>
+<p>قل «ال» ثم الكلمة. إن سمعت اللام واضحة فهي <b>قمرية</b>، وإن اختفت اللام وتضاعف الحرف فهي <b>شمسية</b>.</p>
+<button onclick="tab('play')">ابدأ اللعب</button></div>`}
+
+let G={};
+function play(){
+view.innerHTML=`<h2>اختر لعبة</h2><div class="menu">
+<button onclick="start('quiz')"><div>🎯 تحدّي العشر كلمات<small>صنّف كل كلمة: شمسية أم قمرية؟</small></div>⭐</button>
+<button onclick="start('race')"><div>⏱️ سباق الـ 45 ثانية<small>أجب عن أكبر عدد ممكن قبل انتهاء الوقت</small></div>⭐⭐</button>
+<button onclick="start('pron')"><div>🗣️ كيف تُنطق؟<small>اختر النطق الصحيح للكلمة</small></div>⭐</button></div>`}
+
+function start(mode){
+clearInterval(G.tm);
+let pool=WORDS.filter(w=>mode!=="pron"||norm(w[2])!=="ا"||w[2]!=="أ");
+G={mode,deck:shuf(pool).slice(0,mode==="race"?45:10),i:0,ok:0,left:45,done:false};
+if(mode==="race"){G.tm=setInterval(()=>{G.left--;const t=$("t");if(t)t.textContent="⏱️ "+G.left;if(G.left<=0)finish()},1000)}
+ask()}
+
+function ask(){
+if(G.done)return;
+if(G.i>=G.deck.length)return finish();
+const w=G.deck[G.i],f=norm(w[2]);
+let body;
+if(G.mode==="pron"){
+const opts=shuf([["الْ‑"+rest(w),"m"],["ا"+f+"ْ‑"+rest(w),"s"]]);
+body=`<div class="two" style="grid-template-columns:1fr">${opts.map(o=>`<button class="alt" onclick="pick('${o[1]}')">${o[0]}</button>`).join("")}</div>`}
+else body=`<div class="two"><button class="bsun" onclick="pick('s')">☀️ شمسية</button><button onclick="pick('m')">🌙 قمرية</button></div>`;
+view.innerHTML=`<div class="meta"><span>${G.mode==="race"?`<span id="t">⏱️ ${G.left}</span>`:`${G.i+1} / ${G.deck.length}`}</span><span>صحيح: ${G.ok}</span></div>
+<div class="bar"><i style="width:${G.mode==="race"?G.left/45*100:G.i/G.deck.length*100}%"></i></div>
+<div class="card"><p style="text-align:center;margin:0">${G.mode==="pron"?"كيف تُنطق هذه الكلمة؟":"ما نوع اللام في هذه الكلمة؟"}</p>
+<div class="bigword"><span>ال</span>${rest(w)}</div>${body}<div id="fb"></div></div>`}
+
+function pick(k){
+if(G.lock)return;
+const w=G.deck[G.i],right=kind(w),good=k===right;
+if(good){G.ok++;addStars(G.mode==="race"?1:1)}
+const f=norm(w[2]);
+const why=right==="s"?`الحرف «${f}» شمسي، فتُكتب «${full(w)}» وتُقرأ «ا${f}ْ‑${rest(w)}».`:`الحرف «${f==="ا"?w[2]:f}» قمري، فتُكتب «${full(w)}» وتُقرأ «الْ‑${rest(w)}».`;
+if(G.mode==="race"){G.i++;G.lock=true;
+$("fb").innerHTML=`<div class="fb ${good?"ok":"no"}">${good?"أحسنت! ✅":"لا بأس ❌ "+why}</div>`;
+setTimeout(()=>{G.lock=false;ask()},good?400:1400);return}
+G.lock=true;
+$("fb").innerHTML=`<div class="fb ${good?"ok":"no"}">${good?"أحسنت! ✅ ":"حاول مرة أخرى ❌ "}${why}</div><button onclick="G.lock=false;G.i++;ask()">التالي</button>`;
+if(good)pop("⭐")}
+
+function finish(){
+clearInterval(G.tm);G.done=true;G.lock=false;
+const total=G.mode==="race"?G.i:G.deck.length;
+let bonus=0;if(G.mode!=="race"&&G.ok===total)bonus=3;if(G.mode==="race"&&G.ok>=15)bonus=3;
+if(bonus){addStars(bonus)}
+if(G.ok>S.best){S.best=G.ok;save()}
+const before=BADGES.filter(b=>S.stars-G.ok-bonus>=b[0]).length,after=BADGES.filter(b=>S.stars>=b[0]).length;
+pop(bonus?"🏆":"🎉");
+view.innerHTML=`<div class="card" style="text-align:center"><div style="font-size:64px">${bonus?"🏆":"🎉"}</div><h2>أجبت ${G.ok} من ${total} إجابة صحيحة</h2>
+<p>ربحت ⭐ ${G.ok}${bonus?` + مكافأة ⭐ ${bonus}`:""}</p>
+${after>before?`<div class="fb ok">فتحت شارة جديدة! 🎖️</div>`:""}
+<div class="two"><button onclick="start('${G.mode}')">العب مرة أخرى</button><button class="alt" onclick="tab('play')">الألعاب</button></div></div>`}
+
+let W={};
+function mk(){const s=WORDS.filter(w=>kind(w)==="s"),m=WORDS.filter(w=>kind(w)==="m");
+W={words:shuf([...shuf(s).slice(0,6),...shuf(m).slice(0,6)]),a:{},checked:false,paid:false}}
+function sheet(){if(!W.words)mk();drawSheet()}
+function drawSheet(){
+const rows=W.words.map((w,i)=>{const a=W.a[i],r=W.checked?(a===kind(w)?"ok":"no"):"";
+return `<div class="row ${r}"><span class="w">${W.checked?full(w):w}</span>
+<button class="s ${a==="s"?"sel":""}" onclick="ans(${i},'s')">☀️ شمسية</button>
+<button class="m ${a==="m"?"sel":""}" onclick="ans(${i},'m')">🌙 قمرية</button></div>`}).join("");
+const n=W.words.filter((w,i)=>W.a[i]===kind(w)).length;
+view.innerHTML=`<div class="card"><h2>📝 ورقة العمل</h2><p>الاسم: ____________ التاريخ: ____________</p>
+<p>اختر نوع اللام في كل كلمة:</p>${rows}
+${W.checked?`<div class="fb ${n>=10?"ok":"no"}">النتيجة: ${n} من ${W.words.length} ${n===W.words.length?"🏆 ممتاز!":""}</div>`:""}
+<div class="noprint two" style="margin-top:10px"><button onclick="chk()">صحّح إجاباتي</button><button class="alt" onclick="mk();drawSheet()">ورقة جديدة</button></div>
+<div class="noprint" style="margin-top:10px"><button class="alt" style="width:100%" onclick="try{window.print()}catch(e){}">🖨️ طباعة الورقة</button></div></div>`}
+function ans(i,k){if(W.checked)return;W.a[i]=k;drawSheet()}
+function chk(){W.checked=true;const n=W.words.filter((w,i)=>W.a[i]===kind(w)).length;
+if(!W.paid){W.paid=true;addStars(n);if(n===W.words.length){addStars(3);pop("🏆")}else pop("⭐")}
+drawSheet()}
+
+function reward(){
+const next=BADGES.find(b=>S.stars<b[0]);
+view.innerHTML=`<div class="card" style="text-align:center"><div style="font-size:56px">⭐</div><h2>${S.stars} نجمة</h2>
+<p>أفضل نتيجة في الألعاب: ${S.best}</p>
+${next?`<p>باقي ${next[0]-S.stars} نجمة لشارة «${next[2]}»</p><div class="bar"><i style="width:${Math.min(100,S.stars/next[0]*100)}%"></i></div>`:`<p>فتحت كل الشارات، أنت بطل! 👑</p>`}</div>
+<div class="badges">${BADGES.map(b=>`<div class="badge ${S.stars>=b[0]?"on":""}"><span class="e">${S.stars>=b[0]?b[1]:"🔒"}</span><b>${b[2]}</b><br><small>${b[0]} نجمة</small></div>`).join("")}</div>
+<p style="text-align:center"><button class="alt" onclick="if(confirm('هل تريد مسح كل النجوم؟')){S={stars:0,best:0};save();addStars(0);reward()}">مسح التقدم</button></p>`}
+
+addStars(0);tab("learn");
+</script>
+</body>
+</html>
